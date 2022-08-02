@@ -1,0 +1,7 @@
+4						!numero de pontos do trecho
+10						!numero de pontos por trecho
+0.0 -0.5 0.0  !-Y
+0.0  0.0 0.0  !G
+0.0  0.0 0.0  !G
+0.0 0.5 0.0   !Y
+

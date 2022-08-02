@@ -26,19 +26,19 @@ program main
         Format="(3F12.8,I3)"
 
 
-	do i=1,npt-1
+	do i=1,npt/2
 
-		do j=1,ntr
+		do j=1,ntr-1
 
-		x=kpt(i,1)+(kpt(i+1,1)-kpt(i,1))*(dble(j-1)/dble(ntr))
-		y=kpt(i,2)+(kpt(i+1,2)-kpt(i,2))*(dble(j-1)/dble(ntr))
-		z=kpt(i,3)+(kpt(i+1,3)-kpt(i,3))*(dble(j-1)/dble(ntr))
+		x=kpt(2*i-1,1)+(kpt(2*i,1)-kpt(2*i-1,1))*(dble(j-1)/dble(ntr))
+		y=kpt(2*i-1,2)+(kpt(2*i,2)-kpt(2*i-1,2))*(dble(j-1)/dble(ntr))
+		z=kpt(2*i-1,3)+(kpt(2*i,3)-kpt(2*i-1,3))*(dble(j-1)/dble(ntr))
 
 		write(*,Format) x,y,z,0
 	
 		end do
 
-	        write(*,Format) kpt(i+1,1),kpt(i+1,2),kpt(i+1,3),0
+	        write(*,Format) kpt(2*i,1),kpt(2*i,2),kpt(2*i,3),0
 
 	end do
 
