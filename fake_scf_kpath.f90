@@ -12,7 +12,8 @@ program main
 	integer :: ntr
 	double precision,allocatable,dimension(:,:) :: kpt
 	double precision :: x,y,z
-
+        CHARACTER(LEN=30) :: Format
+        
 	read(*,*) npt
 	read(*,*) ntr
 
@@ -22,6 +23,9 @@ program main
 	 read(*,*) kpt(i,1),kpt(i,2),kpt(i,3)
 	end do	
 
+        Format="(3F12.8,I3)"
+
+
 	do i=1,npt-1
 
 		do j=1,ntr
@@ -30,11 +34,11 @@ program main
 		y=kpt(i,2)+(kpt(i+1,2)-kpt(i,2))*(dble(j-1)/dble(ntr))
 		z=kpt(i,3)+(kpt(i+1,3)-kpt(i,3))*(dble(j-1)/dble(ntr))
 
-		write(*,*) x,y,z,0
+		write(*,Format) x,y,z,0
 	
 		end do
 
-	        write(*,*) kpt(i+1,1),kpt(i+1,2),kpt(i+1,3),0
+	        write(*,Format) kpt(i+1,1),kpt(i+1,2),kpt(i+1,3),0
 
 	end do
 
