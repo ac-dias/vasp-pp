@@ -5,7 +5,8 @@ program main
 	implicit none
 	double precision,dimension(3,3) :: rlat
 	integer,dimension(3) :: ngrid
-	double precision :: rk,iflag,enmax,aux
+	double precision :: rk,iflag
+	real(4) :: enmax,aux
 	integer :: i
 	character(len=10) :: cflag
 	
@@ -30,7 +31,7 @@ program main
 		
 			aux = 1.0+(i*0.25)
 		
-			write(*,*) real(aux), enmax*real(aux)
+			write(*,*) aux, enmax*aux
 		
 		
 		end do
@@ -41,15 +42,16 @@ program main
 		write(*,*)
 	
 		write(*,*) "         ","rk","          ","Nk1","          ","Nk2","          ","Nk3"
-	do i=1,10
-	
-		rk= dble(10.0*i)
-		!call rkmesh2D(rk,rlat,ngrid)
-		call rkmesh(rk,rlat,ngrid)
 		
-		write(*,*) int(rk),ngrid(1),ngrid(2),ngrid(3)
+		do i=1,10
 	
-	end do
+			rk= dble(10.0*i)
+			!call rkmesh2D(rk,rlat,ngrid)
+			call rkmesh(rk,rlat,ngrid)
+		
+			write(*,*) int(rk),ngrid(1),ngrid(2),ngrid(3)
+	
+		end do
 
 
 
