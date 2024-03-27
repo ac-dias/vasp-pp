@@ -17,8 +17,8 @@ all :
 	$(FOR) vasp_gap-finder-soc.f90 -o $(DIR)gaps.x
 	$(FOR) vasp_gap-finder-soc-hse.f90 -o $(DIR)gaps_h.x
 	$(FOR) vasp_gap_vbm-finder-sm.f90 -o $(DIR)gapf_sm.x
-	$(FOR) rkmesh-POSCAR.f90 -o $(DIR)rkmesh.x	
-	$(FOR) raman-spec.f90 -o $(DIR)raman.x	
+	$(FOR) rkmesh-POSCAR.f90 -o $(DIR)rkmesh.x
+	$(FOR) ir-raman-spec.f90 -o $(DIR)ir-raman.x	
 
 
 
