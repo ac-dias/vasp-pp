@@ -110,7 +110,7 @@ program main
 		
 		soma = 0.0
 		
-		do j=1,nmodes
+		do j=1,nmodes-3
 		
 			soma=soma+gaussian(freq-specdata(j,1),sme)*specdata(j,2)
 		
