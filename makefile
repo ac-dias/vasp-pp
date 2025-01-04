@@ -7,6 +7,7 @@ all :
 	$(FOR) vasp_bands_kpath.f90 -o $(DIR)vbands_k.x
 	$(FOR) vasp_bands_kpath_fake.f90 -o $(DIR)vbands_k_f.x
 	$(FOR) vasp_bands_kpath_fake_procar.f90 -o $(DIR)vbands_k_f_p.x
+	$(FOR) vasp_bands_procar.f90 -o $(DIR)vbands_p.x
 	$(FOR) vasp_bands_kpath_fake_sp.f90 -o $(DIR)vbands_k_f_sp.x
 	$(FOR) vasp_bands_kpath_scs.f90 -o $(DIR)vbands_k_scs.x
 	$(FOR) vasp_dos_2-mod.f90 -o $(DIR)vaspdosj.x
