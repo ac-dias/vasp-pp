@@ -26,7 +26,7 @@ program main
 	integer :: iflag
 	integer :: lorbit
 	integer :: nread,nclm
-	real,allocatable,dimension(:) :: pflag2
+	!real,allocatable,dimension(:) :: pflag2
 
 	
 
@@ -40,7 +40,7 @@ program main
     	if (erro/=0) stop "Erro na abertura do arquivo de entrada 1"
 	OPEN(UNIT=102, FILE= "POSCAR",STATUS='old', IOSTAT=erro)
     	if (erro/=0) stop "Erro na abertura do arquivo de entrada 2"
-	OPEN(UNIT=103, FILE= "PROCAR",STATUS='old', IOSTAT=erro)
+	OPEN(UNIT=103, FILE= "PROCAR_OPT",STATUS='old', IOSTAT=erro)
     	if (erro/=0) stop "Erro na abertura do arquivo de entrada 3"
 
       CALL getarg(1, arg)
@@ -117,24 +117,24 @@ program main
 		read(103,*) cflag!,pflag,pflag,pflag,pflag,pflag
 
 	  !lendo sx
-		do k=1,nions
-		 read(103,*) iflag!,pflag,pflag,pflag,pflag,pflag
-		end do
+	  !	do k=1,nions
+	  !	 read(103,*) iflag!,pflag,pflag,pflag,pflag,pflag
+	  !	end do
 		
-		read(103,*) cflag!,pflag,pflag,pflag,pflag,pflag
+	   !	read(103,*) cflag!,pflag,pflag,pflag,pflag,pflag
           !lendo sy
-		do k=1,nions
-		 read(103,*) iflag!,pflag,pflag,pflag,pflag,pflag
-		end do
+	   !	do k=1,nions
+	   !	 read(103,*) iflag!,pflag,pflag,pflag,pflag,pflag
+	   !	end do
 		
-		read(103,*) cflag!,pflag,pflag,pflag,pflag,pflag
+	 !	read(103,*) cflag!,pflag,pflag,pflag,pflag,pflag
 	  !lendo sz
-		do k=1,nions
-		 read(103,*) iflag!,pflag,pflag,pflag,pflag,pflag
-		end do
+	!	do k=1,nions
+	!	 read(103,*) iflag!,pflag,pflag,pflag,pflag,pflag
+	!	end do
 		
-		read(103,*) cflag!,(pflag2(m),m=1,(nread-1)),energies(i,j,3)
-		read(103,*)
+	!	read(103,*) cflag!,(pflag2(m),m=1,(nread-1)),energies(i,j,3)
+	!	read(103,*)
 	 end do
 
 		
@@ -169,7 +169,7 @@ program main
 
 	deallocate(energies)
 	deallocate(kpt)
-	deallocate(pflag2)
+	!deallocate(pflag2)
 
 	close(100)
 	close(101)
